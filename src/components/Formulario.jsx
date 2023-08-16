@@ -9,7 +9,7 @@ import Alert from "./Alert";
 
 
 
-const Formulario = () => {
+const Formulario = ({lista,setLista}) => {
   
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
@@ -29,10 +29,16 @@ const Formulario = () => {
     e.preventDefault();
     if (!nombre == '' && !email == '' && !edad == 0 && !cargo == '' && !telefono == 0) {
       if (validarEmail(email)) {
-          
-        
-        setError("Las contraseñas no coinciden");
-        setColor('red');
+        const id = lista.length + 1;
+        const newList = [...lista,{id: id, nombre: nombre, correo: email, edad: edad, cargo: cargo, telefono: telefono}]
+        setLista(newList);
+        setNombre("");
+        setEmail("");
+        setEdad("");
+        setCargo("");
+        setTelefono("");
+        setError("Colaborador agregado!");
+        setColor('green');
         }else {
         setError("El formato del Email es incorrecto");
         setColor('red');
