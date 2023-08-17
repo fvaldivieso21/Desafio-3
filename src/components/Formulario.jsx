@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../assets/css/Formulario.css";
 import Form from 'react-bootstrap/Form';
 import Alert from "./Alert";
+import { v4 as Uuidv4 } from "uuid";
 
 
 
@@ -29,7 +30,7 @@ const Formulario = ({lista,setLista}) => {
     e.preventDefault();
     if (!nombre == '' && !email == '' && !edad == 0 && !cargo == '' && !telefono == 0) {
       if (validarEmail(email)) {
-        const id = lista.length + 1;
+        const id = Uuidv4();
         const newList = [...lista,{id: id, nombre: nombre, correo: email, edad: edad, cargo: cargo, telefono: telefono}]
         setLista(newList);
         setNombre("");
@@ -79,7 +80,7 @@ const Formulario = ({lista,setLista}) => {
       
         
       <button className="btn btn-dark mt-3 w-100 bg-success" type="submit">
-            Agrega colaborador
+            Agregar colaborador
       </button>
       <Alert error={error} color={color}/>
   </Form>
