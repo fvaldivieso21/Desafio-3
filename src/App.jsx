@@ -8,13 +8,14 @@ import Buscador from './components/Buscador';
 function App() {
   
   const [lista, setLista] = useState(BaseColaboradores);
+  
 
   return (
     <>
       <Formulario lista={lista} setLista={setLista}/>
       <Buscador/>
 
-      <Listado lista={lista}/>
+      <Listado lista={lista} setLista={setLista} />
     </>
   )
 }
