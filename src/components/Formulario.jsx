@@ -10,7 +10,7 @@ import { v4 as Uuidv4 } from "uuid";
 
 
 
-function Formulario({ lista, setLista }) {
+function Formulario({ lista, setLista}) {
 
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
