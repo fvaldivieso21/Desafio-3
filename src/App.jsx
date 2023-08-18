@@ -6,22 +6,32 @@ import Formulario from './components/Formulario'
 import { BaseColaboradores } from "../src/assets/js/BaseColaboradores.js";
 import Listado from './components/Listado';
 import Buscador from './components/Buscador';
-import Alert from "./components/Alert";
+
 
 function App() {
   const [color, setColor] = useState("");
   const [error, setError] = useState("");
   const [lista, setLista] = useState(BaseColaboradores);
-  const [listaoriginal, setListaOriginal] = useState(BaseColaboradores);
+  const [search, setSearch] = useState("");
+
+  const listaFiltrada = lista.filter((item) =>
+  Object.values(item).some((value) =>
+    value.toString().toLowerCase().includes(search.toLowerCase())
+  )
+)
+
+const handleChange = (e) => {
+  setSearch(e.target.value);
+};
 
   return (
   
     <div className="container">
     <h1>Lista de colaboradores</h1>
-    <Buscador lista={lista} setLista={setLista} listaoriginal={listaoriginal}/>
+    <Buscador onChange={handleChange} search={search} />
     <div className="row">
     <div className="col-md-8">    
-      <Listado lista={lista} setLista={setLista} />
+      <Listado listaFiltrada={listaFiltrada} lista={lista} setLista={setLista} />
       </div>
       <div className="col-md-4">
     <Formulario lista={lista} setLista={setLista} color={color} setColor={setColor} error={error} setError={setError}/>

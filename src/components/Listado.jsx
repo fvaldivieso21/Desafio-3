@@ -1,9 +1,8 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
 
-function Listado(props) {
-  const { lista, setLista } = props;
-
+function Listado({ lista, listaFiltrada, setLista }) {
+  
   const eliminarColaborador = (id) => {
     const updatedList = lista.filter((colaborador) => colaborador.id !== id);
     setLista(updatedList);
@@ -22,7 +21,7 @@ function Listado(props) {
         </tr>
       </thead>
       <tbody>
-        {lista.map((tarea) => (
+        {listaFiltrada.map((tarea) => (
           <tr key={tarea.id}>
             <td>{tarea.nombre}</td>
             <td>{tarea.correo}</td>
