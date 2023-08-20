@@ -7,7 +7,7 @@ function Alert({error, color}) {
     return(
 
     <div className="error" style={{backgroundColor: color}} >
-        <p>{error}</p>
+        <p className="text-center">{error}</p>
     </div>
     )
     

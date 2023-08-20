@@ -28,12 +28,15 @@ const handleChange = (e) => {
   
     <div className="container">
     <h1>Lista de colaboradores</h1>
+    
     <Buscador onChange={handleChange} search={search} />
+   
     <div className="row">
     <div className="col-md-8">    
       <Listado listaFiltrada={listaFiltrada} lista={lista} setLista={setLista} />
       </div>
       <div className="col-md-4">
+      <h2 className='text-center bg-success text-white py-2'>Agregar colaborador</h2>
     <Formulario lista={lista} setLista={setLista} color={color} setColor={setColor} error={error} setError={setError}/>
     </div>
     </div>

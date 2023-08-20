@@ -16,7 +16,7 @@ function Listado({ lista, listaFiltrada, setLista }) {
           <th>Correo</th>
           <th>Edad</th>
           <th>Cargo</th>
-          <th>Telefono</th>
+          <th>Teléfono</th>
           <th>Eliminar</th>
         </tr>
       </thead>

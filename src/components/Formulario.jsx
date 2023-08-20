@@ -38,7 +38,7 @@ function Formulario({ lista, setLista}) {
         setEdad("");
         setCargo("");
         setTelefono("");
-        setError("Colaborador agregado!");
+        setError("¡Colaborador agregado!");
         setColor('green');
       } else {
         setError("El formato del Email es incorrecto");
@@ -75,7 +75,7 @@ function Formulario({ lista, setLista}) {
       </div>
 
       <div className="form-group">
-        <input className="form-control mb-3" type="number" placeholder="Ingrese Telefono" name="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+        <input className="form-control mb-3" type="number" placeholder="Ingrese Teléfono" name="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
       </div>
 
 
